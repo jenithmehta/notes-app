@@ -1,6 +1,10 @@
 """Authentication file"""
-import pydantic
-from flask import Blueprint, render_template, request, jsonify
+from flask import (
+                    Blueprint,
+                    render_template,
+                    request,
+                    flash,
+                    )
 from website.validation_models import Signup_validation
 
 auth = Blueprint("auth",__name__)
@@ -20,8 +24,12 @@ def signup():
     """ signup """
     if request.method == "POST":
         form_data = request.form
-        signup_data = Signup_validation(**form_data)
-        return signup_data.model_dump()
+        try:
+            signup_data = Signup_validation(**form_data)
+            print(signup_data.model_dump())
+            flash("Success!","info") 
+        except Exception as err:
+            print(err)
     return render_template("sign_up.html",user={"is_authenticated":True})
 
 @auth.route("/", methods=["GET"])

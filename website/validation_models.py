@@ -1,5 +1,6 @@
 import re
 from pydantic import BaseModel, model_validator
+from flask import flash
 
 class Signup_validation(BaseModel):
     email: str
@@ -12,16 +13,22 @@ class Signup_validation(BaseModel):
         pass1 = self.password1
         pass2 = self.password2
         if pass1 is not None and pass2 is not None and pass1!=pass2:
+            flash("Passwords do not match","error")
             raise ValueError("Passwords do not match")
         if len(pass1) < 8:
+            flash("Length of password should be more than 8 characters","error")
             raise ValueError("Length of password should be more than 8 characters")
         if not re.search("[A-Z]",pass1):
+            flash("Password should include capital letters","error")
             raise ValueError("Password should include capital letters")
         if not re.search("[a-z]",pass1):
+            flash("Password should include small letters","error")
             raise ValueError("Password should include small letters")
         if not re.search("[0-9]",pass1):
+            flash("Password should include numbers","error")
             raise ValueError("Password should include numbers")
         if not re.search("[_@$%&*]",pass1):
+            flash("Password should include special characters [_,@,$,%,&,*]","error")
             raise ValueError("Password should include special characters [_,@,$,%,&,*]")
         return self
     
