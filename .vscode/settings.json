@@ -1,0 +1,38 @@
+{
+  // workspace editor
+  "editor.tabSize": 4,
+  "editor.wordWrap": "on",
+  "editor.insertSpaces": true,
+  "editor.wrappingIndent": "indent",
+  "editor.trimAutoWhitespace": true,
+  // pylint
+  "python.linting.pylintEnabled": true,
+  // pylance
+  "python.languageServer": "Pylance",
+  // annalyzer
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.exclude": ["docs", "legacy", "scripts","typings"],
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnusedImport": "warning"
+  },
+  "python.analysis.diagnosticMode": "workspace",
+  // black formatter
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "[html]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4,
+  },
+  // isort
+  "isort.args": ["--profile", "black"]
+}

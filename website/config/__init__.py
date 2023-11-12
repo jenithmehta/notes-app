@@ -4,14 +4,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-class Config:
-    """Main Config
-    """
-    SECRET_KEY = environ.get("SECRET_KEY")
-    DEBUG = False
 
-class DevelopmentConfig:
-    """Development Config
-    """
+class MainConfig:
+    """Main Config"""
+
+    SECRET_KEY = environ.get("SECRET_KEY")
+    SQLALCHEMY_DATABASE_URI = environ.get("SQLALCHEMY_DATABASE_URI")
+    DEBUG = False
+    PORT = environ.get("PORT")
+
+
+class DevelopmentConfig(MainConfig):
+    """Development Config"""
+
+    SQLALCHEMY_DATABASE_URI = environ.get("SQLALCHEMY_DATABASE_URI")
     DEBUG = True
-    

@@ -1,0 +1,4 @@
+werkzeug<=2.3
+Flask-SQLAlchemy
+flask
+flask-login

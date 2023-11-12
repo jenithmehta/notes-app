@@ -1,0 +1,28 @@
+Project Inspirarion - https://github.com/techwithtim/Flask-Web-App-Tutorial/
+-----------------------------
+
+- created a flask app, added apis, added templates and static files
+
+# to do in this project
+- Create a postgres db locally, connect it to my flask app
+- write a script to ensure connection
+- make changes in the app so that all the actions happen on the locally created postgres db
+
+-----------------------
+Sept 28 
+stopping as there are many errors, will continue after sometimed
+
+-------------------------
+Oct 17th - Fill data in db
+
+------------------------------
+Oct 22
+Refactor code
+understand better
+connect a global db
+-------------------------
+Make multi application flask app
+----------------------------
+Nov 5th 
+Task
+- correct the Home page
