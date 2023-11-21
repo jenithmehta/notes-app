@@ -2,7 +2,6 @@
 from flask import Blueprint, render_template
 from website.models import db
 
-# code
 views = Blueprint("views", __name__)
 
 
