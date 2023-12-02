@@ -1,3 +1,7 @@
+./project_comms*
+./sql_test*
+./.env
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
